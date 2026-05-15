@@ -1,0 +1,23 @@
+{
+  "skill_name": "lark-weekly-report",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "出本周周报",
+      "expected_output": "计算上周四~本周三时间窗口，调脚本拉取bitable数据，生成7章周报写入飞书文档，返回文档链接",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "初始化周报配置，app_token是YFAdbeVkPaiZOysCHFYck0Banqh",
+      "expected_output": "调scan_bitable.py扫描表结构，AI语义匹配5张核心表+字段映射，询问是否需要台账，生成weekly-report-config.json供用户确认",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "帮我生成4月30日到5月9日的项目周报",
+      "expected_output": "按指定周期(4/30~5/9)调脚本生成周报，里程碑窗口仍用本月+50天规则，不因特殊周期改变",
+      "files": []
+    }
+  ]
+}

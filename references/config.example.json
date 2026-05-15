@@ -1,0 +1,84 @@
+{
+  "app_token": "YOUR_APP_TOKEN",
+  "tables": {
+    "project": "YOUR_PROJECT_TABLE_ID",
+    "milestone": "YOUR_MILESTONE_TABLE_ID",
+    "task": "YOUR_TASK_TABLE_ID",
+    "issue": "YOUR_ISSUE_TABLE_ID",
+    "change": "YOUR_CHANGE_TABLE_ID",
+    "ledger": null
+  },
+  "fields": {
+    "project": {
+      "name": "合同编号+项目名称",
+      "status": "项目状态",
+      "region": "区域或类型",
+      "focus": "关注情况",
+      "pm": "项目经理",
+      "dl": "交付负责人",
+      "amount": "合同金额（万）",
+      "risk": "风险点或现阶段关键问题描述"
+    },
+    "milestone": {
+      "name": "计划达成时间_回款类型_项目名称",
+      "status": "里程碑状态",
+      "payment_type": "付款类型",
+      "amount": "计划验收金额（万）",
+      "plan_date": "当前计划时间",
+      "actual_date": "里程碑实际达成时间",
+      "deviate": "偏离天数",
+      "project": "所属项目",
+      "dl": "交付负责人"
+    },
+    "task": {
+      "name": "任务名称",
+      "type": "任务类型",
+      "status": "任务check状态",
+      "progress": "进度百分比",
+      "owner": "负责人",
+      "start": "开始时间",
+      "plan_end": "计划完成时间",
+      "actual_end": "实际完成时间",
+      "project": "所属项目"
+    },
+    "issue": {
+      "description": "问题描述",
+      "status": "解决状态",
+      "level": "问题级别",
+      "type": "问题类型",
+      "product": "所属产品",
+      "created": "问题产生时间",
+      "dev": "研发负责人",
+      "project": "所属项目"
+    },
+    "change": {
+      "content": "变更内容",
+      "status": "变更状态",
+      "level": "*变更级别",
+      "type": "*变更类型",
+      "modules": "*涉及功能模块",
+      "start": "变更开始时间",
+      "end": "变更结束时间",
+      "dev": "研发负责人",
+      "project": "所属项目"
+    },
+    "ledger": {
+      "title": "周报标题",
+      "status": "报告状态",
+      "doc_link": "周报文档",
+      "report_date": "汇报日期",
+      "period_start": "周期开始",
+      "period_end": "周期结束"
+    }
+  },
+  "enums": {
+    "inactive_statuses": ["搁置", "未启动-搁置", "已完成", "无合同+搁置", "搁置-放弃"],
+    "issue_p0": "P0 关键路径问题",
+    "issue_p1": "P1 ",
+    "shelved_status": "搁置"
+  },
+  "output": {
+    "folder_token": "YOUR_FOLDER_TOKEN"
+  },
+  "reporter": "Your Name"
+}
