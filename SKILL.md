@@ -14,15 +14,23 @@ metadata:
 
 ## 前置检查
 
-每次使用前必须确认环境就绪：
+每次使用前必须确认环境就绪，缺失项给出安装指引：
 
 ```bash
-lark-cli --version  # 确认 lark-cli 已安装
-lark-cli auth status --as user  # 确认已认证
-python3 -c "import matplotlib; print(matplotlib.__version__)"  # 确认图表依赖
-```
+# 1. lark-cli
+lark-cli --version
+# 未找到 → 提示用户: npm install -g lark-cli && lark-cli auth login
 
-任一项失败则提示用户安装/认证后再继续。
+# 2. 认证状态
+lark-cli auth status --as user
+# 未认证 → 提示用户: lark-cli auth login
+
+# 3. matplotlib
+python3 -c "import matplotlib; print(matplotlib.__version__)"
+# 未找到 → 提示用户: python3 -m pip install matplotlib
+
+# 全部通过 → 继续
+```
 
 ## 适用场景
 

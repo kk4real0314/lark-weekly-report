@@ -5,7 +5,7 @@
 ## 依赖
 
 - [lark-cli](https://github.com/nicepkg/lark-cli)（已安装且已认证）
-- Python 3 + matplotlib
+- Python 3.8+ + matplotlib
 - lark-shared / lark-base / lark-doc skill（随 lark-cli 自动安装）
 
 ## 安装
@@ -16,17 +16,35 @@ npx skills add TheR2K/lark-weekly-report
 
 ## 使用
 
-### 1. 初始化配置（首次使用）
+### 1. 环境准备
 
-对你的 AI Agent 说：
+AI Agent 会在执行时自动检查环境，缺失项会给出安装指引。手动安装步骤：
+
+**安装 lark-cli：**
+```bash
+lark-cli --version  # 检查是否已安装
+npm install -g lark-cli  # 未安装时执行
+lark-cli auth login  # 认证（浏览器打开飞书授权页）
+```
+
+**检查 Python 环境：**
+```bash
+python3 --version  # 需要 3.8+
+python3 -c "import matplotlib; print(matplotlib.__version__)"  # 图表依赖
+python3 -m pip install matplotlib  # matplotlib 未安装时执行
+```
+
+### 2. 初始化配置（首次使用）
+
+将多维表格的飞书链接发给 AI Agent：
 
 ```
-初始化周报配置，app_token 是 <你的 bitable app_token>
+初始化周报配置，链接是 https://xxx.feishu.cn/base/XXX
 ```
 
-skill 会自动扫描 bitable 表结构，匹配 5 张核心表和字段映射，生成 `weekly-report-config.json` 供你确认。
+Skill 会自动从链接提取 app_token，扫描表结构，匹配 5 张核心表和字段映射，生成 `weekly-report-config.json` 供你确认。
 
-### 2. 生成周报
+### 3. 生成周报
 
 ```
 出周报
@@ -41,7 +59,7 @@ skill 会：
 4. 组装 7 章内容写入飞书文档
 5. 可选写入周报台账
 
-### 3. 指定周期
+### 4. 指定周期
 
 ```
 帮我生成 4月30日到5月9日 的项目周报
